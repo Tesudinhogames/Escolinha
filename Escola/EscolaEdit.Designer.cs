@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            panel1 = new Panel();
-            nomeEdit = new TextBox();
-            razaoEdit = new TextBox();
-            enderecoEdit = new TextBox();
+            escolaDtg = new DataGridView();
             esclusaoEsc = new DataGridViewButtonColumn();
             selecaoEscola = new DataGridViewButtonColumn();
             nomeEsc = new DataGridViewTextBoxColumn();
@@ -40,53 +36,32 @@
             enderecoEsc = new DataGridViewTextBoxColumn();
             cnpjEsc = new DataGridViewTextBoxColumn();
             tellEsc = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            nomeEdit = new TextBox();
+            razaoEdit = new TextBox();
+            enderecoEdit = new TextBox();
             label123 = new Label();
             label1 = new Label();
             cnpjEdit = new MaskedTextBox();
             tellEdit = new MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)escolaDtg).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // escolaDtg
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { esclusaoEsc, selecaoEscola, nomeEsc, razaoEsc, enderecoEsc, cnpjEsc, tellEsc });
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(763, 204);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(19, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(763, 204);
-            panel1.TabIndex = 1;
-            // 
-            // nomeEdit
-            // 
-            nomeEdit.Location = new Point(68, 251);
-            nomeEdit.Name = "nomeEdit";
-            nomeEdit.Size = new Size(614, 23);
-            nomeEdit.TabIndex = 1;
-            // 
-            // razaoEdit
-            // 
-            razaoEdit.Location = new Point(68, 299);
-            razaoEdit.Name = "razaoEdit";
-            razaoEdit.Size = new Size(614, 23);
-            razaoEdit.TabIndex = 2;
-            // 
-            // enderecoEdit
-            // 
-            enderecoEdit.Location = new Point(68, 356);
-            enderecoEdit.Name = "enderecoEdit";
-            enderecoEdit.Size = new Size(166, 23);
-            enderecoEdit.TabIndex = 4;
+            escolaDtg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            escolaDtg.Columns.AddRange(new DataGridViewColumn[] { esclusaoEsc, selecaoEscola, nomeEsc, razaoEsc, enderecoEsc, cnpjEsc, tellEsc });
+            escolaDtg.Dock = DockStyle.Fill;
+            escolaDtg.Location = new Point(0, 0);
+            escolaDtg.Name = "escolaDtg";
+            escolaDtg.Size = new Size(727, 204);
+            escolaDtg.TabIndex = 0;
+            escolaDtg.CellContentClick += dataGridView1_CellContentClick;
             // 
             // esclusaoEsc
             // 
@@ -135,11 +110,43 @@
             tellEsc.ReadOnly = true;
             tellEsc.Width = 110;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(escolaDtg);
+            panel1.Location = new Point(296, 153);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(727, 204);
+            panel1.TabIndex = 1;
+            // 
+            // nomeEdit
+            // 
+            nomeEdit.Font = new Font("Segoe UI", 10F);
+            nomeEdit.Location = new Point(296, 395);
+            nomeEdit.Name = "nomeEdit";
+            nomeEdit.Size = new Size(614, 25);
+            nomeEdit.TabIndex = 1;
+            // 
+            // razaoEdit
+            // 
+            razaoEdit.Font = new Font("Segoe UI", 10F);
+            razaoEdit.Location = new Point(296, 454);
+            razaoEdit.Name = "razaoEdit";
+            razaoEdit.Size = new Size(614, 25);
+            razaoEdit.TabIndex = 2;
+            // 
+            // enderecoEdit
+            // 
+            enderecoEdit.Font = new Font("Segoe UI", 10F);
+            enderecoEdit.Location = new Point(296, 507);
+            enderecoEdit.Name = "enderecoEdit";
+            enderecoEdit.Size = new Size(262, 25);
+            enderecoEdit.TabIndex = 4;
+            // 
             // label123
             // 
             label123.AutoSize = true;
             label123.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label123.Location = new Point(68, 229);
+            label123.Location = new Point(296, 373);
             label123.Name = "label123";
             label123.Size = new Size(117, 19);
             label123.TabIndex = 6;
@@ -149,7 +156,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label1.Location = new Point(68, 277);
+            label1.Location = new Point(296, 432);
             label1.Name = "label1";
             label1.Size = new Size(92, 19);
             label1.TabIndex = 7;
@@ -157,26 +164,72 @@
             // 
             // cnpjEdit
             // 
-            cnpjEdit.Location = new Point(285, 356);
+            cnpjEdit.Font = new Font("Segoe UI", 10F);
+            cnpjEdit.Location = new Point(575, 507);
             cnpjEdit.Mask = "00.000.000/0000-00";
             cnpjEdit.Name = "cnpjEdit";
-            cnpjEdit.Size = new Size(117, 23);
+            cnpjEdit.Size = new Size(145, 25);
             cnpjEdit.TabIndex = 8;
             // 
             // tellEdit
             // 
-            tellEdit.Location = new Point(462, 356);
+            tellEdit.Font = new Font("Segoe UI", 10F);
+            tellEdit.Location = new Point(735, 507);
             tellEdit.Mask = "(00) 00000-9999";
             tellEdit.Name = "tellEdit";
-            tellEdit.Size = new Size(120, 23);
+            tellEdit.Size = new Size(175, 25);
             tellEdit.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(296, 489);
+            label2.Name = "label2";
+            label2.Size = new Size(64, 17);
+            label2.TabIndex = 10;
+            label2.Text = "Endereço";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label3.Location = new Point(575, 489);
+            label3.Name = "label3";
+            label3.Size = new Size(39, 17);
+            label3.TabIndex = 11;
+            label3.Text = "CNPJ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            label4.Location = new Point(735, 487);
+            label4.Name = "label4";
+            label4.Size = new Size(61, 17);
+            label4.TabIndex = 12;
+            label4.Text = "Telefone";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(938, 480);
+            button1.Name = "button1";
+            button1.Size = new Size(96, 31);
+            button1.TabIndex = 13;
+            button1.Text = "Alterar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // EscolaEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1318, 732);
+            Controls.Add(button1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(tellEdit);
             Controls.Add(cnpjEdit);
             Controls.Add(label1);
@@ -188,7 +241,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EscolaEdit";
             Text = "EscolaEdit";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += EscolaEdit_Load;
+            ((System.ComponentModel.ISupportInitialize)escolaDtg).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -196,7 +250,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView escolaDtg;
         private Panel panel1;
         private TextBox nomeEdit;
         private TextBox razaoEdit;
@@ -212,5 +266,9 @@
         private Label label1;
         private MaskedTextBox cnpjEdit;
         private MaskedTextBox tellEdit;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button button1;
     }
 }
