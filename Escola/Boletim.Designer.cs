@@ -34,10 +34,12 @@
             // 
             // dadosAlunos
             // 
+            dadosAlunos.AllowUserToAddRows = false;
+            dadosAlunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dadosAlunos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dadosAlunos.Location = new Point(175, 128);
             dadosAlunos.Name = "dadosAlunos";
-            dadosAlunos.Size = new Size(806, 383);
+            dadosAlunos.Size = new Size(806, 222);
             dadosAlunos.TabIndex = 0;
             dadosAlunos.CellContentClick += dadosAlunos_CellContentClick;
             // 

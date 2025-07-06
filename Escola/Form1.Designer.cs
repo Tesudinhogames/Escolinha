@@ -49,7 +49,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, relatoriosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1318, 24);
+            menuStrip1.Size = new Size(1364, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -99,42 +99,42 @@
             // registroToolStripMenuItem
             // 
             registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            registroToolStripMenuItem.Size = new Size(180, 22);
+            registroToolStripMenuItem.Size = new Size(119, 22);
             registroToolStripMenuItem.Text = "registro";
             registroToolStripMenuItem.Click += registroToolStripMenuItem_Click;
             // 
             // boletimToolStripMenuItem
             // 
             boletimToolStripMenuItem.Name = "boletimToolStripMenuItem";
-            boletimToolStripMenuItem.Size = new Size(180, 22);
+            boletimToolStripMenuItem.Size = new Size(119, 22);
             boletimToolStripMenuItem.Text = "boletim";
             boletimToolStripMenuItem.Click += boletimToolStripMenuItem_Click;
             // 
             // escolasToolStripMenuItem
             // 
             escolasToolStripMenuItem.Name = "escolasToolStripMenuItem";
-            escolasToolStripMenuItem.Size = new Size(180, 22);
+            escolasToolStripMenuItem.Size = new Size(119, 22);
             escolasToolStripMenuItem.Text = "escolas";
             escolasToolStripMenuItem.Click += escolasToolStripMenuItem_Click;
             // 
             // turmasToolStripMenuItem
             // 
             turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
-            turmasToolStripMenuItem.Size = new Size(180, 22);
+            turmasToolStripMenuItem.Size = new Size(119, 22);
             turmasToolStripMenuItem.Text = "turmas";
             turmasToolStripMenuItem.Click += turmasToolStripMenuItem_Click;
             // 
             // alunosToolStripMenuItem
             // 
             alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
-            alunosToolStripMenuItem.Size = new Size(180, 22);
+            alunosToolStripMenuItem.Size = new Size(119, 22);
             alunosToolStripMenuItem.Text = "alunos";
             alunosToolStripMenuItem.Click += alunosToolStripMenuItem_Click;
             // 
             // materiasToolStripMenuItem
             // 
             materiasToolStripMenuItem.Name = "materiasToolStripMenuItem";
-            materiasToolStripMenuItem.Size = new Size(180, 22);
+            materiasToolStripMenuItem.Size = new Size(119, 22);
             materiasToolStripMenuItem.Text = "materias";
             materiasToolStripMenuItem.Click += materiasToolStripMenuItem_Click;
             // 
@@ -143,7 +143,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(1318, 732);
+            ClientSize = new Size(1364, 749);
             Controls.Add(menuStrip1);
             ForeColor = SystemColors.ActiveCaptionText;
             IsMdiContainer = true;
@@ -151,6 +151,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
