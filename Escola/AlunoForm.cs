@@ -39,18 +39,18 @@ namespace Escola
 
         private void SalvarAl_Click(object sender, EventArgs e)
         {
-            bool tell = false, date = false, validacao = false;
-            if (respTell.MaskFull) tell = true;
-            if(dataAl.MaskFull) date = true;
+            bool validacao = false;
+          
 
-            if (nomeAl.Text != "" && resp.Text != "" && tell == true && date == true && escolaCmb.SelectedIndex != -1 &&
+            if (nomeAl.Text != "" && resp.Text != "" && respTell.MaskFull && dataAl.MaskFull && escolaCmb.SelectedIndex != -1 &&
                 turmaAl.SelectedIndex != -1 && sexo != "") validacao = true;
+
             else validacao = false;
 
             if (validacao == true)
             {
-                string insert = $"insert into alunos (turma_id,nome, data_nascimento, nome_resp, telefone_resp, sexo, situacao)" +
-                    $" values ({idTurma},'{nomeAl.Text}', '{dataAl.Text}', '{resp.Text}', '{respTell.Text}', '{sexo}', 'ativo')";
+                string insert = $"insert into alunos (turma_id,nome, data_nascimento, nome_resp, telefone_resp, sexo)" +
+                    $" values ({idTurma},'{nomeAl.Text}', '{dataAl.Text}', '{resp.Text}', '{respTell.Text}', '{sexo}')";
 
                 Funcoes.Inserir(insert);
 

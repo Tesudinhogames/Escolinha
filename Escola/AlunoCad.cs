@@ -23,31 +23,4 @@ namespace Escola
         public string Frequencia { get; set; }
         public string Situacao { get; set; }
     }
-
-    public class Frequencia
-    {
-        public int alunoid;
-        public int freq1;
-        public int freq2;
-        public int freq3;
-        public int freq4;
-
-    }
-
-    public class TurmaCadastro
-    {
-        public string Nome;
-        public string? Escola;
-        public int Ano_letivo;
-        public string serie;
-    }
-
-    public class EscolaCadastro
-    {
-        public string Nome_fantasia;
-        public string Razao_social;
-        public string Cnpj;
-        public string Endereco;
-        public int Telefone;
-    }
 }

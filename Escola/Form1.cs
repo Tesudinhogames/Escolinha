@@ -1,4 +1,5 @@
 using MySql.Data.MySqlClient;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Escola
 {
@@ -24,17 +25,32 @@ namespace Escola
 
         private void alunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlunoForm aluno = new AlunoForm();
+            string query = "select id from turmas";
 
-            Abrir(aluno);
+            var cont = Funcoes.Pesquisar(query);
+
+            if (cont.Rows.Count == 0) MessageBox.Show("É necessário ter pelo menos uma turma cadastrada para prosseguir");
+            else
+            {
+                AlunoForm aluno = new AlunoForm();
+                Abrir(aluno);
+            }
         }
 
         private void turmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            
+            string query = "select id from escolas";
 
-            TurmaForm turma = new TurmaForm();
-            Abrir(turma);
+            var turmas = Funcoes.Pesquisar(query);
+
+            if (turmas.Rows.Count == 0) MessageBox.Show("É necessário ter pelo menos uma escola cadastrada para prosseguir");
+            else
+            {
+                TurmaForm turma = new TurmaForm();
+                Abrir(turma);
+            }
         }
 
         private void escolaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,8 +68,17 @@ namespace Escola
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroForm registro = new RegistroForm();
-            Abrir(registro);
+            string query = "select id from alunos";
+
+            var cont = Funcoes.Pesquisar(query);
+
+            if (cont.Rows.Count == 0) MessageBox.Show("É necessário ter pelo menos um aluno cadastrado para prosseguir");
+            else
+            {
+                RegistroForm registro = new RegistroForm();
+                Abrir(registro);
+            }
+
         }
 
         private void boletimToolStripMenuItem_Click(object sender, EventArgs e)

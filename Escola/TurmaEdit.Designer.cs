@@ -30,6 +30,7 @@
         {
             turmaDtg = new DataGridView();
             panel2 = new Panel();
+            excluirBtn = new Button();
             serieCbx = new ComboBox();
             escCbx = new ComboBox();
             editarBtn = new Button();
@@ -51,14 +52,14 @@
             turmaDtg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             turmaDtg.Location = new Point(36, 20);
             turmaDtg.Name = "turmaDtg";
-            turmaDtg.Size = new Size(671, 199);
+            turmaDtg.Size = new Size(843, 199);
             turmaDtg.TabIndex = 0;
             turmaDtg.CellClick += turmaDtg_CellClick;
-           
             // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlDark;
+            panel2.Controls.Add(excluirBtn);
             panel2.Controls.Add(turmaDtg);
             panel2.Controls.Add(serieCbx);
             panel2.Controls.Add(escCbx);
@@ -72,12 +73,25 @@
             panel2.Font = new Font("Segoe UI", 10F);
             panel2.Location = new Point(323, 191);
             panel2.Name = "panel2";
-            panel2.Size = new Size(734, 406);
+            panel2.Size = new Size(897, 350);
             panel2.TabIndex = 2;
+            panel2.Paint += panel2_Paint;
+            // 
+            // excluirBtn
+            // 
+            excluirBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            excluirBtn.Location = new Point(758, 242);
+            excluirBtn.Name = "excluirBtn";
+            excluirBtn.Size = new Size(82, 33);
+            excluirBtn.TabIndex = 13;
+            excluirBtn.Text = "Excluir";
+            excluirBtn.UseVisualStyleBackColor = true;
+            excluirBtn.Click += excluirBtn_Click;
             // 
             // serieCbx
             // 
             serieCbx.FormattingEnabled = true;
+            serieCbx.Items.AddRange(new object[] { "1° ano EM", "2° ano EM", "3° ano EM" });
             serieCbx.Location = new Point(479, 305);
             serieCbx.Name = "serieCbx";
             serieCbx.Size = new Size(226, 25);
@@ -94,7 +108,7 @@
             // editarBtn
             // 
             editarBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editarBtn.Location = new Point(623, 351);
+            editarBtn.Location = new Point(758, 300);
             editarBtn.Name = "editarBtn";
             editarBtn.Size = new Size(82, 33);
             editarBtn.TabIndex = 10;
@@ -169,6 +183,7 @@
             Name = "TurmaEdit";
             Text = "TurmaEdit";
             WindowState = FormWindowState.Maximized;
+            Load += TurmaEdit_Load;
             ((System.ComponentModel.ISupportInitialize)turmaDtg).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -188,5 +203,6 @@
         private Button editarBtn;
         private ComboBox serieCbx;
         private ComboBox escCbx;
+        private Button excluirBtn;
     }
 }
