@@ -37,9 +37,9 @@
             dadosAlunos.AllowUserToAddRows = false;
             dadosAlunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dadosAlunos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dadosAlunos.Location = new Point(231, 114);
+            dadosAlunos.Location = new Point(482, 283);
             dadosAlunos.Name = "dadosAlunos";
-            dadosAlunos.Size = new Size(430, 222);
+            dadosAlunos.Size = new Size(424, 222);
             dadosAlunos.TabIndex = 0;
             dadosAlunos.CellContentClick += dadosAlunos_CellContentClick;
             // 
@@ -47,8 +47,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(1156, 639);
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(1388, 788);
             Controls.Add(dadosAlunos);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Boletim";

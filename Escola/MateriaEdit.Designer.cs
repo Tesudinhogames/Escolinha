@@ -35,6 +35,7 @@
             editarBtn = new Button();
             CargaTxt = new MaskedTextBox();
             panel1 = new Panel();
+            label3 = new Label();
             excluirBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)materiasDtg).BeginInit();
             panel1.SuspendLayout();
@@ -46,14 +47,15 @@
             materiasDtg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             materiasDtg.BackgroundColor = SystemColors.ControlDarkDark;
             materiasDtg.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            materiasDtg.Location = new Point(47, 3);
+            materiasDtg.Location = new Point(34, 19);
             materiasDtg.Name = "materiasDtg";
-            materiasDtg.Size = new Size(450, 170);
+            materiasDtg.Size = new Size(463, 170);
             materiasDtg.TabIndex = 0;
+            materiasDtg.CellClick += materiasDtg_CellClick;
             // 
             // nomeTxt
             // 
-            nomeTxt.Location = new Point(47, 215);
+            nomeTxt.Location = new Point(34, 220);
             nomeTxt.Name = "nomeTxt";
             nomeTxt.Size = new Size(236, 25);
             nomeTxt.TabIndex = 1;
@@ -62,7 +64,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label1.Location = new Point(47, 195);
+            label1.Location = new Point(34, 200);
             label1.Name = "label1";
             label1.Size = new Size(127, 17);
             label1.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(51, 260);
+            label2.Location = new Point(38, 265);
             label2.Name = "label2";
             label2.Size = new Size(91, 17);
             label2.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // editarBtn
             // 
-            editarBtn.Location = new Point(396, 250);
+            editarBtn.Location = new Point(411, 255);
             editarBtn.Name = "editarBtn";
             editarBtn.Size = new Size(86, 36);
             editarBtn.TabIndex = 5;
@@ -91,7 +93,7 @@
             // CargaTxt
             // 
             CargaTxt.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            CargaTxt.Location = new Point(148, 257);
+            CargaTxt.Location = new Point(135, 262);
             CargaTxt.Mask = "000";
             CargaTxt.Name = "CargaTxt";
             CargaTxt.Size = new Size(45, 25);
@@ -100,6 +102,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(excluirBtn);
             panel1.Controls.Add(materiasDtg);
             panel1.Controls.Add(CargaTxt);
@@ -107,31 +110,43 @@
             panel1.Controls.Add(editarBtn);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(139, 84);
+            panel1.Location = new Point(429, 245);
             panel1.Name = "panel1";
-            panel1.Size = new Size(543, 299);
+            panel1.Size = new Size(523, 299);
             panel1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            label3.Location = new Point(34, 3);
+            label3.Name = "label3";
+            label3.Size = new Size(416, 13);
+            label3.TabIndex = 8;
+            label3.Text = "*Só é possível excluir matérias, se essa matéria não estiver em nenhuma turma.";
             // 
             // excluirBtn
             // 
-            excluirBtn.Location = new Point(396, 186);
+            excluirBtn.Location = new Point(411, 200);
             excluirBtn.Name = "excluirBtn";
             excluirBtn.Size = new Size(86, 35);
             excluirBtn.TabIndex = 7;
             excluirBtn.Text = "Excluir";
             excluirBtn.UseVisualStyleBackColor = true;
+            excluirBtn.Click += excluirBtn_Click;
             // 
             // MateriaEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1085, 510);
+            ClientSize = new Size(1380, 788);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MateriaEdit";
             Text = "MateriaEdit";
+            Load += MateriaEdit_Load;
             ((System.ComponentModel.ISupportInitialize)materiasDtg).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -148,5 +163,6 @@
         private MaskedTextBox CargaTxt;
         private Panel panel1;
         private Button excluirBtn;
+        private Label label3;
     }
 }

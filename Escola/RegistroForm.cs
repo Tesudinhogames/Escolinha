@@ -418,8 +418,6 @@ namespace Escola
                 double maximu = double.Parse(max1.Text) + double.Parse(max2.Text) + double.Parse(max3.Text) + double.Parse(max4.Text);
                 double percentual = carga / maximu * 100;
 
-                MessageBox.Show(percentual.ToString());
-
                 if (percentual >= 70)
                     aprovado[1] = true;
                 else

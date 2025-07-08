@@ -150,7 +150,7 @@
             // lancar
             // 
             lancar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lancar.Location = new Point(618, 328);
+            lancar.Location = new Point(618, 319);
             lancar.Name = "lancar";
             lancar.Size = new Size(94, 29);
             lancar.TabIndex = 16;
@@ -401,7 +401,7 @@
             panel1.Controls.Add(groupBox3);
             panel1.Controls.Add(lancar);
             panel1.Controls.Add(groupBox2);
-            panel1.Location = new Point(53, 78);
+            panel1.Location = new Point(325, 209);
             panel1.Name = "panel1";
             panel1.Size = new Size(731, 370);
             panel1.TabIndex = 25;
@@ -412,7 +412,7 @@
             panel2.Controls.Add(reprovadoRbt);
             panel2.Controls.Add(aprovadoRbt);
             panel2.Controls.Add(label7);
-            panel2.Location = new Point(334, 288);
+            panel2.Location = new Point(350, 288);
             panel2.Name = "panel2";
             panel2.Size = new Size(233, 60);
             panel2.TabIndex = 32;
@@ -494,7 +494,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(875, 524);
+            ClientSize = new Size(1380, 788);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RegistroForm";

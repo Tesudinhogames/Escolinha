@@ -40,7 +40,7 @@ namespace Escola
         private void turmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            
+
             string query = "select id from escolas";
 
             var turmas = Funcoes.Pesquisar(query);
@@ -108,7 +108,8 @@ namespace Escola
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MateriaEdit materia = new MateriaEdit();
-            Abrir(materia); 
+            Abrir(materia);
         }
+
     }
 }
