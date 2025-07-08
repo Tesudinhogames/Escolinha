@@ -177,7 +177,7 @@
             panel2.Controls.Add(tellEdit);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(cnpjEdit);
-            panel2.Location = new Point(252, 255);
+            panel2.Location = new Point(281, 197);
             panel2.Name = "panel2";
             panel2.Size = new Size(818, 395);
             panel2.TabIndex = 14;
@@ -198,7 +198,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1318, 732);
+            ClientSize = new Size(1380, 788);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EscolaEdit";

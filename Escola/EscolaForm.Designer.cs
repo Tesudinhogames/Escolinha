@@ -41,22 +41,26 @@
             razaoSocialTxt = new TextBox();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
+            panel1 = new Panel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(31, 25);
             label1.Name = "label1";
-            label1.Size = new Size(95, 15);
+            label1.Size = new Size(97, 15);
             label1.TabIndex = 0;
             label1.Text = "Nome da escola:";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(83, 77);
             label2.Name = "label2";
             label2.Size = new Size(37, 15);
@@ -66,18 +70,20 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(31, 21);
             label3.Name = "label3";
-            label3.Size = new Size(74, 15);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 2;
             label3.Text = "Razão social:";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(31, 76);
             label4.Name = "label4";
-            label4.Size = new Size(59, 15);
+            label4.Size = new Size(62, 15);
             label4.TabIndex = 3;
             label4.Text = "Endereço:";
             // 
@@ -97,9 +103,10 @@
             // 
             // SalvarEsc
             // 
-            SalvarEsc.Location = new Point(374, 94);
+            SalvarEsc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SalvarEsc.Location = new Point(401, 87);
             SalvarEsc.Name = "SalvarEsc";
-            SalvarEsc.Size = new Size(75, 23);
+            SalvarEsc.Size = new Size(75, 31);
             SalvarEsc.TabIndex = 9;
             SalvarEsc.Text = "Cadastrar";
             SalvarEsc.UseVisualStyleBackColor = true;
@@ -116,9 +123,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label5.Location = new Point(217, 76);
             label5.Name = "label5";
-            label5.Size = new Size(55, 15);
+            label5.Size = new Size(59, 15);
             label5.TabIndex = 11;
             label5.Text = "Telefone:";
             // 
@@ -144,7 +152,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(nomeEsc);
-            groupBox1.Location = new Point(88, 44);
+            groupBox1.Location = new Point(47, 19);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(511, 137);
             groupBox1.TabIndex = 14;
@@ -159,20 +167,29 @@
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(cnpj);
-            groupBox2.Location = new Point(73, 187);
+            groupBox2.Location = new Point(47, 162);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(511, 138);
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(groupBox2);
+            panel1.Location = new Point(394, 275);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(592, 323);
+            panel1.TabIndex = 16;
+            // 
             // EscolaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(1209, 628);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(1380, 788);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EscolaForm";
             Text = "EscolaForm";
@@ -180,6 +197,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -198,5 +216,6 @@
         private TextBox razaoSocialTxt;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private Panel panel1;
     }
 }

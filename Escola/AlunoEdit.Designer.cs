@@ -201,7 +201,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(297, 221);
+            panel1.Location = new Point(199, 189);
             panel1.Name = "panel1";
             panel1.Size = new Size(983, 411);
             panel1.TabIndex = 16;
@@ -221,7 +221,7 @@
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1364, 749);
+            ClientSize = new Size(1380, 788);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;

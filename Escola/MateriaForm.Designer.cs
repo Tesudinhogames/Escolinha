@@ -43,37 +43,42 @@
             materiasList = new ListBox();
             materiaTurmaCadastro = new Button();
             horas = new MaskedTextBox();
+            panel1 = new Panel();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 82);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(33, 66);
             label1.Name = "label1";
-            label1.Size = new Size(102, 15);
+            label1.Size = new Size(103, 15);
             label1.TabIndex = 0;
-            label1.Text = "Nome da matéria:";
+            label1.Text = "Nome da matéria";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(47, 149);
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(33, 133);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(80, 15);
             label2.TabIndex = 1;
-            label2.Text = "Carga horária:";
+            label2.Text = "Carga horária";
             // 
             // disciplina
             // 
-            disciplina.Location = new Point(47, 100);
+            disciplina.Location = new Point(33, 84);
             disciplina.Name = "disciplina";
             disciplina.Size = new Size(132, 23);
             disciplina.TabIndex = 2;
             // 
             // SalvarMat
             // 
-            SalvarMat.Location = new Point(74, 207);
+            SalvarMat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SalvarMat.Location = new Point(60, 191);
             SalvarMat.Name = "SalvarMat";
             SalvarMat.Size = new Size(75, 23);
             SalvarMat.TabIndex = 4;
@@ -84,6 +89,7 @@
             // labl1234
             // 
             labl1234.AutoSize = true;
+            labl1234.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labl1234.Location = new Point(66, 104);
             labl1234.Name = "labl1234";
             labl1234.Size = new Size(50, 15);
@@ -93,9 +99,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(22, 177);
             label3.Name = "label3";
-            label3.Size = new Size(114, 15);
+            label3.Size = new Size(119, 15);
             label3.TabIndex = 6;
             label3.Text = "Materias disponíveis";
             // 
@@ -121,9 +128,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label4.Location = new Point(230, 175);
             label4.Name = "label4";
-            label4.Size = new Size(121, 15);
+            label4.Size = new Size(124, 15);
             label4.TabIndex = 11;
             label4.Text = "Materias adicionadas:";
             // 
@@ -138,7 +146,7 @@
             groupBox1.Controls.Add(labl1234);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(turmaMateria);
-            groupBox1.Location = new Point(224, 43);
+            groupBox1.Location = new Point(230, 26);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(400, 366);
             groupBox1.TabIndex = 12;
@@ -147,6 +155,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(66, 39);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
@@ -175,7 +184,8 @@
             // 
             // materiaTurmaCadastro
             // 
-            materiaTurmaCadastro.Location = new Point(262, 85);
+            materiaTurmaCadastro.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            materiaTurmaCadastro.Location = new Point(250, 69);
             materiaTurmaCadastro.Name = "materiaTurmaCadastro";
             materiaTurmaCadastro.Size = new Size(75, 41);
             materiaTurmaCadastro.TabIndex = 12;
@@ -185,32 +195,42 @@
             // 
             // horas
             // 
-            horas.Location = new Point(134, 146);
+            horas.Location = new Point(119, 130);
             horas.Mask = "009";
             horas.Name = "horas";
             horas.Size = new Size(27, 23);
             horas.TabIndex = 3;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(SalvarMat);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(horas);
+            panel1.Controls.Add(disciplina);
+            panel1.Location = new Point(366, 197);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(649, 394);
+            panel1.TabIndex = 13;
+            // 
             // MateriaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            ClientSize = new Size(763, 496);
-            Controls.Add(groupBox1);
-            Controls.Add(SalvarMat);
-            Controls.Add(horas);
-            Controls.Add(disciplina);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(1380, 788);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MateriaForm";
-            Text = "MateriaForm";
+            Text = "z";
             Load += MateriaForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -230,5 +250,6 @@
         private Label label5;
         private ComboBox escolasCbx;
         private MaskedTextBox horas;
+        private Panel panel1;
     }
 }
