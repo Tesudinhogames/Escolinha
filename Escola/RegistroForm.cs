@@ -15,6 +15,24 @@ namespace Escola
 {
     public partial class RegistroForm : Form
     {
+        bool[] aprovado = new bool[2];
+        int media = 0, freqTotal = 0;
+        
+
+        public void Aprovar()
+        {
+            if (aprovado[0] && aprovado[1])
+            {
+                aprovadoRbt.Checked = true;
+                reprovadoRbt.Checked = false;          
+            }
+            else
+            {
+                aprovadoRbt.Checked = false;
+                reprovadoRbt.Checked = true;
+            }
+        }
+
         public RegistroForm()
         {
             InitializeComponent();
@@ -22,13 +40,14 @@ namespace Escola
 
         public bool valNota(string num)
         {
-            if (num.Length != 0) {
+            if (num.Length != 0)
+            {
                 if (int.Parse(num) > 100)
                 {
                     MessageBox.Show("A nota maxíma permitida é 100!");
                     return false;
                 }
-                else {return true; }
+                else { return true; }
             }
             return true;
         }
@@ -39,7 +58,7 @@ namespace Escola
             {
                 if (int.Parse(num) > max)
                 {
-                    MessageBox.Show("A nota maxíma permitida é 100!");
+                    MessageBox.Show("A frequência maxíma permitida é " + max.ToString() + "!");
                     return false;
                 }
                 else { return true; }
@@ -47,7 +66,7 @@ namespace Escola
             return true;
         }
 
-        
+
 
         public void Shiu(string text, KeyEventArgs e)
         {
@@ -123,59 +142,47 @@ namespace Escola
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void alunoCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (alunoCb.SelectedItem != null)
+            if (alunoCb.SelectedItem != null && turmaCb.SelectedItem != null)
             {
-                string query = $"select id, nome from turmas where nome = '{turmaCb.SelectedItem}'";
+                
+                
+                    string query = $"select id, nome from turmas where nome = '{turmaCb.SelectedItem}'";
 
-                var dt = Funcoes.Pesquisar(query);
+                    var dt = Funcoes.Pesquisar(query);
 
-                string id = dt.Rows[0]["id"].ToString();
+                    string id = dt.Rows[0]["id"].ToString();
 
-                query = $"select m.disciplina as materia, t.nome as nome, m.carga_horaria as maximo, mt.turma_id as turmaID, mt.materia_id as materiaID from materias_turma mt" +
-                    $" join turmas t on t.id = mt.turma_id" +
-                    $" join materias m on m.id = mt.materia_id where nome = '{turmaCb.SelectedItem}' order by materia";
+                    query = $"select m.disciplina as materia, t.nome as nome, m.carga_horaria as maximo, mt.turma_id as turmaID, mt.materia_id as materiaID from materias_turma mt" +
+                        $" join turmas t on t.id = mt.turma_id" +
+                        $" join materias m on m.id = mt.materia_id where nome = '{turmaCb.SelectedItem}' order by materia";
 
-                dt = Funcoes.Pesquisar(query);
+                    dt = Funcoes.Pesquisar(query);
 
-                mat1.Text = dt.Rows[0]["materia"].ToString();
-                mat2.Text = dt.Rows[1]["materia"].ToString();
-                mat3.Text = dt.Rows[2]["materia"].ToString();
-                mat4.Text = dt.Rows[3]["materia"].ToString();
-                freq1.Text = mat1.Text;
-                freq2.Text = mat2.Text;
-                freq3.Text = mat3.Text;
-                freq4.Text = mat4.Text;
+                    mat1.Text = dt.Rows[0]["materia"].ToString();
+                    mat2.Text = dt.Rows[1]["materia"].ToString();
+                    mat3.Text = dt.Rows[2]["materia"].ToString();
+                    mat4.Text = dt.Rows[3]["materia"].ToString();
+                    freq1.Text = mat1.Text;
+                    freq2.Text = mat2.Text;
+                    freq3.Text = mat3.Text;
+                    freq4.Text = mat4.Text;
 
 
-                string[] maximo = new string[4];
+                    string[] maximo = new string[4];
 
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    maximo[i] = dt.Rows[i]["maximo"].ToString();
-                }
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        maximo[i] = dt.Rows[i]["maximo"].ToString();
+                    }
 
-                max1.Text = maximo[0];
-                max2.Text = maximo[1];
-                max3.Text = maximo[2];
-                max4.Text = maximo[3];
+                    max1.Text = maximo[0];
+                    max2.Text = maximo[1];
+                    max3.Text = maximo[2];
+                    max4.Text = maximo[3];
+                
             }
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void lancar_Click(object sender, EventArgs e)
@@ -206,6 +213,9 @@ namespace Escola
             Funcoes.Inserir(insert);
 
             Funcoes.Limpar(this);
+
+            turmaCb.Items.Clear();
+            alunoCb.Items.Clear();
 
             mat1.Text = "";
             mat2.Text = "";
@@ -249,65 +259,174 @@ namespace Escola
 
         private void horas2_KeyDown(object sender, KeyEventArgs e)
         {
-            Shiu(horas1.Text, e);
+            Shiu(horas2.Text, e);
         }
 
         private void horas3_KeyDown(object sender, KeyEventArgs e)
         {
-            Shiu(horas1.Text, e);
+            Shiu(horas3.Text, e);
         }
 
         private void horas4_KeyDown(object sender, KeyEventArgs e)
         {
-            Shiu(horas1.Text, e);
+            Shiu(horas4.Text, e);
         }
 
         private void nota1_TextChanged(object sender, EventArgs e)
         {
-            if(!valNota(nota1.Text)) nota1.Text = "100";
+            if (nota1.Text != "")
+            {
+                if (!valNota(nota1.Text)) nota1.Text = "100";
+
+
+                if (nota2.Text != "" && nota3.Text != "" && nota4.Text != "")
+
+                    media = (int.Parse(nota1.Text) + int.Parse(nota2.Text) + int.Parse(nota3.Text) + int.Parse(nota4.Text)) / 4;
+                mediaTxt.Text = media.ToString();
+            }
+
         }
 
         private void nota2_TextChanged(object sender, EventArgs e)
         {
-            if (!valNota(nota2.Text)) nota2.Text = "100";
+            if (nota2.Text != "")
+            {
+                if (!valNota(nota2.Text)) nota2.Text = "100";
+
+
+                if (nota1.Text != "" && nota3.Text != "" && nota4.Text != "")
+
+                    media = (int.Parse(nota1.Text) + int.Parse(nota2.Text) + int.Parse(nota3.Text) + int.Parse(nota4.Text)) / 4;
+                mediaTxt.Text = media.ToString();
+            }
+
         }
 
         private void nota3_TextChanged(object sender, EventArgs e)
         {
-            if (!valNota(nota3.Text)) nota3.Text = "100";
+            if (nota3.Text != "")
+            {
+                if (!valNota(nota3.Text)) nota3.Text = "100";
+
+
+                if (nota2.Text != "" && nota1.Text != "" && nota4.Text != "")
+
+                    media = (int.Parse(nota1.Text) + int.Parse(nota2.Text) + int.Parse(nota3.Text) + int.Parse(nota4.Text)) / 4;
+                mediaTxt.Text = media.ToString();
+            }
         }
 
         private void nota4_TextChanged(object sender, EventArgs e)
         {
-            if (!valNota(nota4.Text)) nota4.Text = "100";
+            if (nota4.Text != "")
+            {
+                if (!valNota(nota4.Text)) nota4.Text = "100";
+
+
+                if (nota2.Text != "" && nota3.Text != "" && nota1.Text != "")
+
+                    media = (int.Parse(nota1.Text) + int.Parse(nota2.Text) + int.Parse(nota3.Text) + int.Parse(nota4.Text)) / 4;
+                mediaTxt.Text = media.ToString();
+            }
         }
 
         private void horas1_TextChanged(object sender, EventArgs e)
         {
-            int max = int.Parse(max1.Text);
-            
-            if (!valHoras(horas1.Text, max)) horas1.Text = max.ToString();
+            if (horas1.Text != "")
+            {
+                int max = int.Parse(max1.Text);
+
+                if (!valHoras(horas1.Text, max)) horas1.Text = max.ToString();
+
+                if (horas2.Text != "" && horas3.Text != "" && horas4.Text != "")
+                {
+                    freqTotal = int.Parse(horas1.Text) + int.Parse(horas2.Text) + int.Parse(horas3.Text) + int.Parse(horas4.Text);
+                    freqTotalTxt.Text = freqTotal.ToString();
+                }
+
+            }
         }
 
         private void horas2_TextChanged(object sender, EventArgs e)
         {
-            int max = int.Parse(max2.Text);
+            if (horas2.Text != "")
+            {
+                int max = int.Parse(max2.Text);
 
-            if (!valHoras(horas2.Text, max)) horas2.Text = max.ToString();
+                if (!valHoras(horas2.Text, max)) horas2.Text = max.ToString();
+
+                if (horas1.Text != "" && horas3.Text != "" && horas4.Text != "")
+                {
+                    freqTotal = int.Parse(horas1.Text) + int.Parse(horas2.Text) + int.Parse(horas3.Text) + int.Parse(horas4.Text);
+                    freqTotalTxt.Text = freqTotal.ToString();
+                }
+
+            }
         }
 
         private void horas3_TextChanged(object sender, EventArgs e)
         {
-            int max = int.Parse(max3.Text);
+            if (horas3.Text != "")
+            {
+                int max = int.Parse(max3.Text);
 
-            if (!valHoras(horas3.Text, max)) horas3.Text = max.ToString();
+                if (!valHoras(horas3.Text, max)) horas3.Text = max.ToString();
+
+                if (horas2.Text != "" && horas1.Text != "" && horas4.Text != "")
+                {
+                    freqTotal = int.Parse(horas1.Text) + int.Parse(horas2.Text) + int.Parse(horas3.Text) + int.Parse(horas4.Text);
+                    freqTotalTxt.Text = freqTotal.ToString();
+                }
+
+            }
         }
 
         private void horas4_TextChanged(object sender, EventArgs e)
         {
-            int max = int.Parse(max4.Text);
+            if (horas4.Text != "")
+            {
+                int max = int.Parse(max4.Text);
 
-            if (!valHoras(horas4.Text, max)) horas4.Text = max.ToString();
+                if (!valHoras(horas4.Text, max)) horas4.Text = max.ToString();
+
+                if (horas2.Text != "" && horas3.Text != "" && horas1.Text != "")
+                {
+                    freqTotal = int.Parse(horas1.Text) + int.Parse(horas2.Text) + int.Parse(horas3.Text) + int.Parse(horas4.Text);
+                    freqTotalTxt.Text = freqTotal.ToString();
+                }
+            }
+        }
+
+        private void mediaTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (mediaTxt.Text != "")
+            {
+                if (media >= 70)
+                    aprovado[0] = true;
+                else aprovado[0] = false;
+
+                if (freqTotalTxt.Text != "") Aprovar();
+
+            }
+        }
+
+        private void freqTotalTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (freqTotalTxt.Text != "")
+            {
+                double carga = double.Parse(horas1.Text) + double.Parse(horas2.Text) + double.Parse(horas3.Text) + double.Parse(horas4.Text);
+                double maximu = double.Parse(max1.Text) + double.Parse(max2.Text) + double.Parse(max3.Text) + double.Parse(max4.Text);
+                double percentual = carga / maximu * 100;
+
+                MessageBox.Show(percentual.ToString());
+
+                if (percentual >= 70)
+                    aprovado[1] = true;
+                else
+                    aprovado[1] = false;
+
+                if (mediaTxt.Text != "") Aprovar();   
+            }
         }
     }
 }

@@ -214,13 +214,14 @@
             excluirBtn.TabIndex = 16;
             excluirBtn.Text = "Excluir";
             excluirBtn.UseVisualStyleBackColor = true;
+            excluirBtn.Click += excluirBtn_Click;
             // 
             // AlunoEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1577, 893);
+            ClientSize = new Size(1364, 749);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;

@@ -36,11 +36,11 @@ namespace Escola
 
             string[] max = new string[alunos.Rows.Count];
             
-                string horas_totais = "select a.id as id, sum(m.carga_horaria) as maximo from materias_turma mt" +
+                string horas_totais = "select a.id, sum(m.carga_horaria) as maximo from materias_turma mt" +
                     " join turmas t on t.id = mt.turma_id" +
                     " join materias m on m.id = mt.materia_id" +
                     " join alunos a on a.turma_id = t.id" +
-                    $" group by a.nome order by id limit {alunos.Rows.Count}";
+                    $" group by a.id order by a.id limit {alunos.Rows.Count}";
 
                 var frequencias = Funcoes.Pesquisar(horas_totais);
 

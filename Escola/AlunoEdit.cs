@@ -12,10 +12,10 @@ namespace Escola
 {
     public partial class AlunoEdit : Form
     {
-        static string query = "select a.id,a.nome as nomeAl, a.data_nascimento, a.sexo, a.nome_resp, a.telefone_resp , e.nome_fantasia, " +
+        static string query = "select a.id as ID,a.nome as nomeAl, a.data_nascimento, a.sexo, a.nome_resp, a.telefone_resp , e.nome_fantasia, " +
             "t.nome as nomeTm, e.id as escolaID, t.id as TurmaId from escolas e " +
             " join turmas t on t.escola_id = e.id " +
-            " join alunos a on t.id = a.turma_id";
+            " join alunos a on t.id = a.turma_id order by ID";
 
         DataTable alunos = Funcoes.Pesquisar(query);
         int indice = 0;
@@ -27,7 +27,20 @@ namespace Escola
 
         private void editarBtn_Click(object sender, EventArgs e)
         {
+            string queryy = $"select id, nome from turmas where nome = '{turmaCbx.SelectedItem}'";
 
+            var dt = Funcoes.Pesquisar(queryy);
+
+            string id = dt.Rows[0]["id"].ToString();
+
+            string update = $"update alunos set nome = '{nomeTxt.Text}', data_nascimento = '{DataTxt.Text}', " +
+                $" nome_resp = '{respTxt.Text}', telefone_resp = '{TellTxt.Text}', turma_id = {id}";
+
+            Funcoes.Inserir(update);
+
+            var alunoss = Funcoes.Pesquisar(query);
+            alunoDtg.DataSource = null;
+            alunoDtg.DataSource = alunoss;
 
         }
 
@@ -35,6 +48,8 @@ namespace Escola
         {
             indice = e.RowIndex;
             DataGridViewRow row = alunoDtg.Rows[indice];
+
+            
 
             nomeTxt.Text = row.Cells[1].Value.ToString();
             respTxt.Text = row.Cells[4].Value.ToString();
@@ -80,6 +95,19 @@ namespace Escola
 
 
             }
+        }
+
+        private void excluirBtn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = alunoDtg.Rows[indice];
+
+            string delete = $"delete from alunos where id = {row.Cells[0].Value}";
+
+            Funcoes.Inserir(delete);
+
+            var alunoss = Funcoes.Pesquisar(query);
+            alunoDtg.DataSource = null;
+            alunoDtg.DataSource = alunoss;
         }
     }
 }

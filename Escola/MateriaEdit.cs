@@ -12,9 +12,18 @@ namespace Escola
 {
     public partial class MateriaEdit : Form
     {
+        static string query = "select * from materias";
+        DataTable materias = Funcoes.Pesquisar(query);
+
+
         public MateriaEdit()
         {
             InitializeComponent();
+        }
+
+        private void editarBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
