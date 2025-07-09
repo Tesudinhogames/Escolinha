@@ -16,11 +16,6 @@ namespace Escola
         DataTable escolas = Funcoes.Pesquisar(query);
         int indice = 0;
 
-        private void Coiso()
-        {
-
-        }
-
         public EscolaEdit()
         {
             InitializeComponent();
@@ -73,6 +68,17 @@ namespace Escola
             DataTable escolass = Funcoes.Pesquisar(query);
             escolaDtg.DataSource = null;
             escolaDtg.DataSource = escolass;
+        }
+
+        private void cnpjEdit_TextChanged(object sender, EventArgs e)
+        {
+            if (cnpjEdit.MaskFull)
+            {
+                if (!Funcoes.isCnpj(cnpjEdit.Text))
+                {
+                    MessageBox.Show("Esse cnpj é invalído, preencha o campo novamente.");
+                }
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
             materiaTurmaCadastro = new Button();
             horas = new MaskedTextBox();
             panel1 = new Panel();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(escolasCbx);
             groupBox1.Controls.Add(materiasList);
@@ -148,7 +150,7 @@
             groupBox1.Controls.Add(turmaMateria);
             groupBox1.Location = new Point(230, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(400, 366);
+            groupBox1.Size = new Size(400, 335);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             // 
@@ -215,6 +217,16 @@
             panel1.Size = new Size(649, 394);
             panel1.TabIndex = 13;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(6, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(232, 13);
+            label6.TabIndex = 16;
+            label6.Text = "*É necessário ter quatro matérias por turma";
+            // 
             // MateriaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -251,5 +263,6 @@
         private ComboBox escolasCbx;
         private MaskedTextBox horas;
         private Panel panel1;
+        private Label label6;
     }
 }

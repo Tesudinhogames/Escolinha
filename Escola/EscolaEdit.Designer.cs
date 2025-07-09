@@ -110,6 +110,7 @@
             cnpjEdit.Name = "cnpjEdit";
             cnpjEdit.Size = new Size(145, 25);
             cnpjEdit.TabIndex = 8;
+            cnpjEdit.TextChanged += cnpjEdit_TextChanged;
             // 
             // tellEdit
             // 
